@@ -23,6 +23,6 @@ app.get('/',(req,res)=>{
 })
 
 
-app.listen(Port,()=>{
-    console.log(`server has started at port,${Port}`);
+app.listen(PORT,()=>{
+    console.log(`server has started at port,${PORT}`);
 })
