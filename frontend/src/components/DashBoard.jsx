@@ -19,7 +19,7 @@ const sendOtp=async()=>{
 
 try{
   const res=await axios.post(
-    'http://localhost:5000/otp/send',
+    'https://phone-verification-ah53.onrender.com/otp/send',
     {
       phone
     },
@@ -40,7 +40,7 @@ try{
 const verifyOtp=async()=>{
   try{
     const res=await axios.post(
-      'http://localhost:5000/otp/verify',
+      'https://phone-verification-ah53.onrender.com/otp/verify',
       {
         phone,otp
       },
