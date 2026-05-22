@@ -7,6 +7,7 @@ const otpRoutes=require('./routes/otpRoutes');
 
 const app=express();
 const PORT =process.env.PORT || 5000;
+
 app.use(
   cors({
     origin: "http://localhost:5173",
