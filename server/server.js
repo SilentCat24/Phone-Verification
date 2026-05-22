@@ -6,7 +6,7 @@ const authRoutes=require('./routes/authRoutes');
 const otpRoutes=require('./routes/otpRoutes');
 
 const app=express();
-const Port=process.env.PORT;
+const PORT =process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
