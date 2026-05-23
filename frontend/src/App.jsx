@@ -4,6 +4,7 @@ import Register from './components/Register'
 import Login from './components/Login';
 import DashBoard from './components/DashBoard';
 import Protected from './components/Protected';
+import './App.css'
 
 
 

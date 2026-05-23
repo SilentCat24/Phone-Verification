@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from "react-router-dom";
+import useAuth from '../customHooks/Hooks';
+import '../components/Styles.css'
+
 
 
 const Register = () => {
-const navigate=useNavigate();
-const [error,setError]=useState("")
+const {registerUser,error,loading} = useAuth();
+
 const[formData,setFormData]=useState({
     name:"",
     email:"",
@@ -20,51 +23,15 @@ const[formData,setFormData]=useState({
     });
   };
 
-const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = (e) => {
+  e.preventDefault();
+  registerUser(formData);
+};
 
-  if (
-    !formData.name ||
-    !formData.email ||
-    !formData.password ||
-    !formData.phone
-  ) {
-
-    setError("All fields are required");
-    setTimeout(()=>{
-        setError(" ")
-    },2000)
-  
-
-    return;
-
-  }
-
-
-    try {
-        setError(" ");
-      const res = await axios.post(
-        "https://phone-verification-pq9z.onrender.com/auth/register",
-        formData
-      );
-      alert(res.data.message);
-      navigate("/login");
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
 
   return (
-   <div style={{
-      display:"flex",
-      flexDirection:"column",
-      justifyContent:"center",
-      alignItems:"center",
-      backgroundColor:"#3943B7",
-      minHeight:"95vh"
-
-    }}>
+   <div className='main'>
         {
   error && (
     <p style={{color:"white"}}> {error}</p>
@@ -110,9 +77,9 @@ const handleSubmit = async (e) => {
 
         <br /><br />
 
-        <button type="submit">
-          Register
-        </button>
+         <button disabled={loading}>
+        {loading ? "Registering..." : "Register"}
+      </button>
 
       </form>
 

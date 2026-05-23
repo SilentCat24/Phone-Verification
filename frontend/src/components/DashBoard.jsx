@@ -1,8 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { jwtDecode } from "jwt-decode";
-
-
+import './Styles.css'
 
 const DashBoard = () => {
 
@@ -58,14 +57,7 @@ const verifyOtp=async()=>{
 }
 
   return (
-    <div style={{
-      display:"flex",
-      flexDirection:"column",
-      justifyContent:"center",
-      alignItems:"center",
-      backgroundColor:"#3943B7",
-      minHeight:"95vh"
-    }}>
+    <div className='main'>
     
    <h1 style={{color:"white"}}>Dashboard</h1>
 
