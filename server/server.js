@@ -13,7 +13,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://phone-verification-delta.vercel.app/"
+      "https://phone-verification-delta.vercel.app"
     ],
     credentials: true
   })
