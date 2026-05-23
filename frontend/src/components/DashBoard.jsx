@@ -19,7 +19,7 @@ const sendOtp=async()=>{
 
 try{
   const res=await axios.post(
-    'https://phone-verification-ah53.onrender.com/otp/send',
+    'https://phone-verification-pq9z.onrender.com/otp/send',
     {
       phone
     },
@@ -40,7 +40,7 @@ try{
 const verifyOtp=async()=>{
   try{
     const res=await axios.post(
-      'https://phone-verification-ah53.onrender.com/otp/verify',
+      'https://phone-verification-pq9z.onrender.com/otp/verify',
       {
         phone,otp
       },
@@ -66,6 +66,7 @@ const verifyOtp=async()=>{
       backgroundColor:"#3943B7",
       minHeight:"95vh"
     }}>
+    
    <h1 style={{color:"white"}}>Dashboard</h1>
 
       <input

@@ -44,7 +44,7 @@ const handleSubmit = async (e) => {
     try {
         setError(" ");
       const res = await axios.post(
-        "https://phone-verification-ah53.onrender.com/auth/register",
+        "https://phone-verification-pq9z.onrender.com/auth/register",
         formData
       );
       alert(res.data.message);
